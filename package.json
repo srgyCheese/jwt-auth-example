@@ -1,0 +1,32 @@
+{
+  "name": "jwt-express-authorization-axample",
+  "version": "1.0.0",
+  "description": "jwt mongodb authorization in express",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon app.js"
+  },
+  "keywords": [
+    "jwt",
+    "mongodb",
+    "mongoose",
+    "javascript",
+    "nodejs"
+  ],
+  "author": "Sergey",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.15",
+    "ms": "^2.1.2",
+    "uuid": "^8.3.1"
+  }
+}
