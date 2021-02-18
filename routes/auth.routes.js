@@ -1,5 +1,4 @@
 const {Router} = require('express')
-const emailValidator = require('email-validator')
 const {v4: uuid} = require('uuid')
 const jwt = require('jsonwebtoken')
 const bcrypt = require('bcrypt')
@@ -29,7 +28,7 @@ const signTokens = async userId => {
 router.post('/register', async (req, res) => {
    const {login, password} = req.body
 
-   if (!(emailValidator && password)) {
+   if (!(login && password)) {
       return res.status(400).json({message: 'Некорректные данные'})
    }
 

@@ -13,7 +13,7 @@
     "javascript",
     "nodejs"
   ],
-  "author": "Sergey",
+  "author": "srgyCheese",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^2.0.6"

@@ -1,4 +1,5 @@
 import {derived, writable} from 'svelte/store'
+import jwtDecode from 'jwt-decode'
 
 const refreshToken = async () => {
    const res = await fetch(`/api/auth/refresh`)
@@ -75,9 +76,11 @@ export const authRequest = async (uri, params = {}) => {
 
    params.headers.authorization = `Bearer ${token}`
 
-   try {
-      return await apiRequest(uri, params)
-   } catch (e) {
+   const decoded = jwtDecode(token)
+
+   const date = new Date()
+
+   if (date.getTime() > decoded.exp) {
       const token = await refreshToken()
 
       saveToken(token)
@@ -86,4 +89,6 @@ export const authRequest = async (uri, params = {}) => {
 
       return await apiRequest(uri, params)
    }
+   
+   return await apiRequest(uri, params)
 }

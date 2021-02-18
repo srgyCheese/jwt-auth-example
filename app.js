@@ -23,11 +23,6 @@ app.get('/api/needAuth', needAuth, (req, res) => {
    res.json({message: `Your id is ${req.body.user.userId}`})
 })
 
-
-app.get('/a', (req, res) => {
-   res.send(JSON.stringify(req.cookies))
-})
-
 const start = async () => {
    await mongoose.connect(process.env.MONGO_URI, {
       useNewUrlParser: true,
